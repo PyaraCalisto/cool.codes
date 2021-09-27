@@ -1,5 +1,5 @@
 #This imports urllib to Python
-import urllib.request
+import urllib.request, urllib.parse, urllib.error
 
 #This part of the code stabilish the connection with the server, gets the file and encode the data.
 fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')

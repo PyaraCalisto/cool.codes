@@ -7,3 +7,5 @@ fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
 #This part prints and decode the data from the adress
 for line in fhand:
     print(line.decode().strip())
+
+#The difference between this piece of code and the sockets piece is that urllib in this case will print only the file and not the headers information too.

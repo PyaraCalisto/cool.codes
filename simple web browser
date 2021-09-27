@@ -1,13 +1,22 @@
 import socket
 
 mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+#This part of the code calls a adress and port respectively to the server.
 mysock.connect(('data.pr4e.org', 80))
+
+#This part say to get a file from server and encode that message.
 cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+
+#This line send the message to the server.
 mysock.send(cmd)
 
+#This loop looks for data in the file requested, while reciving data decode that data and print.
 while True:
     data = mysock.recv(512)
     if len(data) < 1:
         break
     print(data.decode(),end='')
+    
+#Here we close the connection with the server.
 mysock.close()
